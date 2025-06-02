@@ -1,0 +1,135 @@
+import React from 'react';
+
+export default function HomePage() {
+  return (
+    <div className="bg-white text-gray-800">
+      <header className="bg-black text-white py-6 px-4 text-center">
+        <h1 className="text-4xl font-bold">Spaulding RenoPros</h1>
+        <p className="text-lg">Kitchens. Baths. Resin Bound Surfaces. Concrete.</p>
+        <p className="text-sm mt-2">513-787-8798 | www.spqrenopros.com</p>
+        <img
+          src="/logo-bbb.jpeg"
+          alt="BBB Accredited"
+          className="mx-auto mt-4 h-12"
+        />
+      </header>
+
+      <section className="p-6 text-center">
+        <h2 className="text-3xl font-semibold mb-4">About Spaulding RenoPros</h2>
+        <p className="max-w-3xl mx-auto">
+          When I was just 15, I poured my heart and soul into restoring a 1964 Corvair Monza Spider.
+          After losing it in a fire and being burned by an untrustworthy contractor,
+          I made a vow: no one else should feel that kind of devastation.
+          Today, I run Spaulding RenoPros with a commitment to integrity, craftsmanship,
+          and reliability.
+        </p>
+      </section>
+
+      <section className="bg-gray-100 p-6">
+        <h2 className="text-3xl font-semibold text-center mb-6">Our Services</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ServiceCard title="Kitchen Remodeling" image="/kitchen-after.jpeg" />
+          <ServiceCard title="Bathroom Renovations" image="/interior-step.jpeg" />
+          <ServiceCard title="Resin Bound Driveways" image="/resin-finish.jpeg" />
+          <ServiceCard title="Concrete Steps & Patios" image="/concrete-steps.jpeg" />
+          <ServiceCard title="Interior Renovations" image="/kitchen-before.jpeg" />
+          <ServiceCard title="Garage & Entry Repairs" image="/garage-interior.jpeg" />
+        </div>
+      </section>
+
+      <section className="p-6 text-center">
+        <h2 className="text-3xl font-semibold mb-4">Gallery</h2>
+        <Gallery />
+      </section>
+
+      <section className="bg-blue-50 py-8 px-6 text-center">
+        <h2 className="text-3xl font-semibold mb-4">Get a Free Estimate</h2>
+        <p className="mb-4">Reach out today and let’s bring your project to life.</p>
+        <a
+          href="tel:5137878798"
+          className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+        >
+          Call 513-787-8798
+        </a>
+      </section>
+
+      <section className="p-6 max-w-xl mx-auto">
+        <h2 className="text-3xl font-semibold text-center mb-4">Contact Us</h2>
+        <form
+          action="https://formspree.io/f/xwkgrkjv"
+          method="POST"
+          className="space-y-4"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            className="w-full p-2 border rounded"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            className="w-full p-2 border rounded"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            className="w-full p-2 border rounded"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 w-full"
+          >
+            Send Message
+          </button>
+        </form>
+      </section>
+
+      <footer className="bg-black text-white text-center py-4">
+        <p>&copy; {new Date().getFullYear()} Spaulding RenoPros. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
+
+function ServiceCard({ title, image }) {
+  return (
+    <div className="rounded shadow overflow-hidden bg-white">
+      <img src={image} alt={title} className="w-full h-48 object-cover" />
+      <div className="p-4">
+        <h3 className="text-xl font-bold mb-2">{title}</h3>
+      </div>
+    </div>
+  );
+}
+
+function Gallery() {
+  const images = [
+    '/resin-prep.jpeg',
+    '/resin-finish.jpeg',
+    '/resin-closeup.jpeg',
+    '/interior-step.jpeg',
+    '/concrete-steps.jpeg',
+    '/kitchen-before.jpeg',
+    '/kitchen-after.jpeg',
+    '/garage-interior.jpeg',
+  ];
+
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {images.map((src, idx) => (
+        <img
+          key={idx}
+          src={src}
+          alt={`Gallery Image ${idx + 1}`}
+          className="w-full h-40 object-cover rounded shadow"
+        />
+      ))}
+    </div>
+  );
+}
