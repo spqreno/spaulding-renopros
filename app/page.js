@@ -3,24 +3,31 @@ import React from 'react';
 export default function HomePage() {
   return (
     <div className="bg-white text-gray-800">
+      {/* Header */}
       <header className="bg-black text-white py-6 px-4 text-center">
         <h1 className="text-4xl font-bold">Spaulding RenoPros</h1>
         <p className="text-lg">Kitchens. Baths. Resin Bound Surfaces. Concrete.</p>
         <p className="text-sm mt-2">513-787-8798 | www.spqrenopros.com</p>
-        <img src="/logo-bbb.jpeg" alt="BBB Accredited" className="mx-auto mt-4 h-12" />
+        <img
+          src="/logo-bbb.jpeg"
+          alt="BBB Accredited"
+          className="mx-auto mt-4 h-12"
+        />
       </header>
 
+      {/* About */}
       <section className="p-6 text-center">
         <h2 className="text-3xl font-semibold mb-4">About Spaulding RenoPros</h2>
         <p className="max-w-3xl mx-auto">
-          When I was just 15, I poured my heart and soul into restoring a 1964 Corvair Monza Spider.
-          After losing it in a fire and being burned by an untrustworthy contractor,
-          I made a vow: no one else should feel that kind of devastation.
+          When I was just 15, I poured my heart and soul into restoring a 1964 Corvair
+          Monza Spider. After losing it in a fire and being burned by an untrustworthy
+          contractor, I made a vow: no one else should feel that kind of devastation.
           Today, I run Spaulding RenoPros with a commitment to integrity, craftsmanship,
           and reliability.
         </p>
       </section>
 
+      {/* Our Services */}
       <section className="bg-gray-100 p-6">
         <h2 className="text-3xl font-semibold text-center mb-6">Our Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -33,31 +40,63 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Gallery */}
       <section className="p-6 text-center">
         <h2 className="text-3xl font-semibold mb-4">Gallery</h2>
         <Gallery />
       </section>
 
+      {/* Call to Action */}
       <section className="bg-blue-50 py-8 px-6 text-center">
         <h2 className="text-3xl font-semibold mb-4">Get a Free Estimate</h2>
         <p className="mb-4">Reach out today and let’s bring your project to life.</p>
-        <a href="tel:5137878798" className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+        <a
+          href="tel:5137878798"
+          className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700"
+        >
           Call 513-787-8798
         </a>
       </section>
 
+      {/* Contact Form */}
       <section className="p-6 max-w-xl mx-auto">
         <h2 className="text-3xl font-semibold text-center mb-4">Contact Us</h2>
-        <form action="https://formspree.io/f/xwkgrkjv" method="POST" className="space-y-4">
-          <input type="text" name="name" placeholder="Your Name" className="w-full p-2 border rounded" required />
-          <input type="email" name="email" placeholder="Your Email" className="w-full p-2 border rounded" required />
-          <textarea name="message" placeholder="Your Message" rows="5" className="w-full p-2 border rounded" required></textarea>
-          <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 w-full">
+        <form
+          action="https://formspree.io/f/myzjkngq"
+          method="POST"
+          className="space-y-4"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            className="w-full p-2 border rounded"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            className="w-full p-2 border rounded"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="5"
+            className="w-full p-2 border rounded"
+            required
+          ></textarea>
+          <button
+            type="submit"
+            className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 w-full"
+          >
             Send Message
           </button>
         </form>
       </section>
 
+      {/* Footer */}
       <footer className="bg-black text-white text-center py-4">
         <p>&copy; {new Date().getFullYear()} Spaulding RenoPros. All rights reserved.</p>
       </footer>
@@ -91,9 +130,13 @@ function Gallery() {
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
       {images.map((src, idx) => (
-        <img key={idx} src={src} alt={`Gallery Image ${idx + 1}`} className="w-full h-40 object-cover rounded shadow" />
+        <img
+          key={idx}
+          src={src}
+          alt={`Gallery Image ${idx + 1}`}
+          className="w-full h-40 object-cover rounded shadow"
+        />
       ))}
     </div>
   );
-}- <form action="https://formspree.io/f/xwkgrkjv" method="POST" className="space-y-4">
-+ <form action="https://formspree.io/f/myzjkngq" method="POST" className="space-y-4"></form>
+}
