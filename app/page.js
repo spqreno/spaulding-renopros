@@ -95,4 +95,5 @@ function Gallery() {
       ))}
     </div>
   );
-}
+}- <form action="https://formspree.io/f/xwkgrkjv" method="POST" className="space-y-4">
++ <form action="https://formspree.io/f/myzjkngq" method="POST" className="space-y-4"></form>
