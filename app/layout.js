@@ -3,9 +3,9 @@ import './globals.css';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Spaulding RenoPros – Home Renovations in Amelia, OH',
+  title: 'Stone & Resin – Custom Surfaces for Modern Spaces',
   description:
-    'Integrity, craftsmanship, reliability—Spaulding RenoPros delivers kitchen, bath, resin, and concrete solutions.',
+    'Premium stone and resin flooring, countertops, and outdoor solutions for residential and commercial projects.',
 };
 
 export default function RootLayout({ children }) {
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         <nav className="fixed top-0 inset-x-0 bg-white shadow-md z-50">
           <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <Link href="/" className="text-2xl font-bold">
-              Spaulding RenoPros
+              Stone &amp; Resin
             </Link>
             <div className="space-x-6 hidden md:flex text-gray-700">
               <Link href="/" className="hover:text-blue-600">
@@ -28,9 +28,9 @@ export default function RootLayout({ children }) {
                 Services
               </Link>
               <Link href="/projects" className="hover:text-blue-600">
-                Portfolio
+                Projects
               </Link>
-              <Link href="#contact" className="hover:text-blue-600">
+              <Link href="/contact" className="hover:text-blue-600">
                 Contact
               </Link>
             </div>

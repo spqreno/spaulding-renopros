@@ -7,21 +7,21 @@ export default function HomePage() {
       {/* Hero */}
       <section
         className="relative h-screen bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero-image.jpeg')" }}
+        style={{ backgroundImage: "url('/resin-closeup.jpeg')" }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50" />
+        <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-            Transforming Homes in Amelia, OH
+            Beautiful Stone &amp; Resin Surfaces
           </h1>
           <p className="text-lg md:text-xl text-white mb-6 max-w-2xl">
-            Quality renovations driven by integrity, craftsmanship, and reliability.
+            Durable, low-maintenance solutions for driveways, floors, and countertops.
           </p>
           <a
-            href="#contact"
+            href="/contact"
             className="bg-blue-600 hover:bg-blue-700 text-white uppercase tracking-wide px-8 py-3 rounded"
           >
-            Get a Free Estimate
+            Get a Quote
           </a>
         </div>
       </section>
@@ -38,10 +38,11 @@ export default function HomePage() {
 
       {/* About Section */}
       <section className="bg-white py-16 px-6 text-center">
-        <h2 className="text-4xl font-semibold mb-6">About Spaulding RenoPros</h2>
+        <h2 className="text-4xl font-semibold mb-6">About Stone &amp; Resin</h2>
         <p className="max-w-3xl mx-auto text-gray-700 leading-relaxed">
-          At 15, I restored a 1964 Corvair Monza Spider—only to lose it in a fire. Burned by an unscrupulous contractor, 
-          I vowed no one else would face that devastation. Today, Spaulding RenoPros stands for integrity, craftsmanship, and reliability.
+          We craft premium surfaces combining natural stone with high-performance resins.
+          Our installations are slip-resistant, UV-stable, and built to withstand the
+          toughest environments while looking stunning for years.
         </p>
       </section>
 
@@ -49,9 +50,9 @@ export default function HomePage() {
       <section className="bg-gray-50 py-16 px-6">
         <h2 className="text-4xl font-semibold text-center mb-10">Our Services</h2>
         <div className="max-w-6xl mx-auto grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <ServiceCard title="Kitchen Remodeling" image="/kitchen-after.jpeg" />
-          <ServiceCard title="Bathroom Renovations" image="/interior-step.jpeg" />
-          <ServiceCard title="Resin Bound Driveways" image="/resin-finish.jpeg" />
+          <ServiceCard title="Driveways" image="/resin-finish.jpeg" />
+          <ServiceCard title="Countertops" image="/kitchen-after.jpeg" />
+          <ServiceCard title="Garage Floors" image="/garage-interior.jpeg" />
         </div>
         <div className="text-center mt-8">
           <a href="/services" className="text-blue-600 hover:underline">
@@ -62,26 +63,26 @@ export default function HomePage() {
 
       {/* Portfolio Teaser */}
       <section className="py-16 px-6 text-center">
-        <h2 className="text-4xl font-semibold mb-6">Featured Projects</h2>
+        <h2 className="text-4xl font-semibold mb-6">Recent Projects</h2>
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-          {['driveway-resurf.jpeg','Laundry-before.jpeg','Pantry-before.jpeg','frontporch-after.jpeg'].map((src, i)=>
+          {['resin-finish.jpeg','frontporch-after.jpeg','garage-interior.jpeg','kitchen-after.jpeg'].map((src, i) => (
             <img
               key={i}
-              src={`/public/projects/${src}`}
+              src={`/${src}`}
               alt=""
               className="rounded shadow object-cover h-64 w-full"
             />
-          )}
+          ))}
         </div>
         <a href="/projects" className="mt-6 inline-block text-blue-600 hover:underline">
-          See More →  
+          See More →
         </a>
       </section>
 
       {/* Contact CTA */}
-      <section id="contact" className="bg-blue-600 text-white py-16 px-6 text-center">
-        <h2 className="text-4xl font-semibold mb-4">Ready to Start Your Project?</h2>
-        <p className="mb-8">Contact us today for a free, no-obligation estimate.</p>
+      <section className="bg-blue-600 text-white py-16 px-6 text-center">
+        <h2 className="text-4xl font-semibold mb-4">Ready to Start?</h2>
+        <p className="mb-8">Contact us today for a free, no-obligation quote.</p>
         <a href="tel:5137878798" className="bg-white text-blue-600 px-8 py-3 rounded uppercase font-bold">
           Call 513-787-8798
         </a>
@@ -89,7 +90,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="bg-black text-gray-400 text-center py-6">
-        <p>&copy; {new Date().getFullYear()} Spaulding RenoPros. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Stone &amp; Resin. All rights reserved.</p>
       </footer>
     </>
   );
@@ -97,7 +98,10 @@ export default function HomePage() {
 
 function ServiceCard({ title, image }) {
   return (
-    <a href={`/services/${title.toLowerCase().replace(/ /g, '-')}`} className="block overflow-hidden bg-white rounded shadow hover:shadow-lg transition">
+    <a
+      href={`/services/${title.toLowerCase().replace(/ /g, '-')}`}
+      className="block overflow-hidden bg-white rounded shadow hover:shadow-lg transition"
+    >
       <img src={image} alt={title} className="w-full h-48 object-cover" />
       <div className="p-4">
         <h3 className="text-xl font-bold">{title}</h3>
